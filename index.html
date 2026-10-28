@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="ms" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Koperasi Orang Kurang Upaya Kinta Berhad (UPAYA)</title>
+    <!-- Favicon -->
+    <link rel="icon" href="logo.jpg" type="image/jpeg">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            blue: '#2563eb', // Modern vibrant blue
+                            dark: '#1e3a8a', // Deep blue
+                            orange: '#f97316', // Modern vibrant orange
+                            light: '#f8fafc',
+                        }
+                    },
+                    boxShadow: {
+                        'soft': '0 20px 40px -15px rgba(0,0,0,0.05)',
+                        'glow': '0 0 20px rgba(37, 99, 235, 0.3)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom scrollbar for a polished look */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f1f1f1; }
+        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+        
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-brand-blue selection:text-white">
+
+    <!-- Navigation Bar (Glassmorphism & Sticky) -->
+    <nav class="glass-nav fixed w-full top-0 z-50 transition-all duration-300 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo / Brand -->
+                <div class="flex-shrink-0 flex items-center gap-3 cursor-pointer" onclick="window.scrollTo(0,0)">
+                    <img src="logo.jpg" alt="Logo UPAYA" class="h-12 w-auto object-contain bg-white rounded shadow-sm">
+                    <span class="font-bold text-xl md:text-2xl text-slate-800 tracking-tight hidden sm:block">UPAYA</span>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#utama" class="text-slate-600 hover:text-brand-blue font-medium transition-colors">Utama</a>
+                    <a href="#mengenai" class="text-slate-600 hover:text-brand-blue font-medium transition-colors">Mengenai Kami</a>
+                    <a href="#galeri" class="text-slate-600 hover:text-brand-blue font-medium transition-colors">Galeri</a>
+                    <a href="#video" class="text-slate-600 hover:text-brand-blue font-medium transition-colors">Video</a>
+                    <a href="#hubungi" class="text-slate-600 hover:text-brand-blue font-medium transition-colors">Hubungi</a>
+                </div>
+
+                <!-- Social Links -->
+                <div class="flex items-center space-x-3">
+                    <a href="https://www.facebook.com/profile.php?id=61551461905698" target="_blank" class="w-9 h-9 rounded-full bg-slate-100 flex items-center justify-center text-slate-600 hover:bg-[#1877F2] hover:text-white transition-all duration-300 transform hover:-translate-y-1 shadow-sm" title="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.youtube.com/@upaya23" target="_blank" class="w-9 h-9 rounded-full bg-slate-100 flex items-center justify-center text-slate-600 hover:bg-[#FF0000] hover:text-white transition-all duration-300 transform hover:-translate-y-1 shadow-sm" title="YouTube">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="https://www.instagram.com/upaya.ipoh/" target="_blank" class="w-9 h-9 rounded-full bg-slate-100 flex items-center justify-center text-slate-600 hover:bg-[#E4405F] hover:text-white transition-all duration-300 transform hover:-translate-y-1 shadow-sm" title="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://wa.me/60135295509" target="_blank" class="w-9 h-9 rounded-full bg-slate-100 flex items-center justify-center text-slate-600 hover:bg-[#25D366] hover:text-white transition-all duration-300 transform hover:-translate-y-1 shadow-sm" title="WhatsApp">
+                        <i class="fab fa-whatsapp text-lg"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="utama" class="relative pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden">
+        <!-- Decorative Background Blob -->
+        <div class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 rounded-full bg-brand-blue/10 blur-3xl z-0 pointer-events-none"></div>
+        <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 rounded-full bg-brand-orange/10 blur-3xl z-0 pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+                <!-- Text Content -->
+                <div class="w-full lg:w-1/2 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 text-brand-blue font-semibold text-sm mb-6 border border-blue-100 shadow-sm">
+                        <span class="w-2 h-2 rounded-full bg-brand-orange animate-pulse"></span>
+                        Ditubuhkan sejak 2009
+                    </div>
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-6 text-slate-900 leading-[1.15]">
+                        Koperasi Orang Kurang Upaya <br class="hidden lg:block"/>
+                        <span class="gradient-text">Kinta Berhad (UPAYA)</span>
+                    </h1>
+                    <p class="text-lg md:text-xl text-slate-600 mb-8 leading-relaxed max-w-2xl mx-auto lg:mx-0">
+                        Memperkasakan komuniti melalui perpaduan dan ekonomi. Dapatkan informasi terkini di laman sosial rasmi kami.
+                    </p>
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                        <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.facebook.com/profile.php?id=61551461905698" target="_blank" class="w-full sm:w-auto px-8 py-4 bg-brand-blue hover:bg-blue-700 text-white font-semibold rounded-full shadow-lg shadow-blue-500/30 transition-all duration-300 transform hover:-translate-y-1 flex items-center justify-center gap-2">
+                            <i class="fab fa-facebook-square text-xl"></i> Kongsi di Facebook
+                        </a>
+                        <a href="#galeri" class="w-full sm:w-auto px-8 py-4 bg-white hover:bg-slate-50 text-slate-700 border border-slate-200 font-semibold rounded-full shadow-sm transition-all duration-300 transform hover:-translate-y-1 flex items-center justify-center gap-2 group">
+                            <i class="fas fa-images text-brand-orange group-hover:scale-110 transition-transform"></i> Galeri Gambar
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Hero Image -->
+                <div class="w-full lg:w-1/2 relative">
+                    <div class="absolute inset-0 bg-gradient-to-tr from-brand-blue to-brand-orange rounded-3xl transform rotate-3 opacity-20 scale-105"></div>
+                    <!-- Gambar Bangunan PPOC Perak / Kraf Anyaman -->
+                    <img src="IMG_6762.jpg" alt="Bangunan PPOC Perak & Kraf Anyaman" onclick="openLightbox(this.src)" class="relative z-10 w-full h-auto object-cover rounded-3xl shadow-2xl border-4 border-white cursor-pointer hover:opacity-95 transition-opacity" title="Klik untuk besarkan">
+                    
+                    <!-- Floating Badge -->
+                    <div class="absolute -bottom-6 -left-6 bg-white p-4 rounded-2xl shadow-xl z-20 flex items-center gap-4 animate-bounce" style="animation-duration: 3s;">
+                        <div class="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center text-brand-orange text-xl">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs text-slate-500 font-medium uppercase tracking-wider">Keahlian</p>
+                            <p class="text-xl font-bold text-slate-800">52 Anggota</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mengenai Kami Section -->
+    <section id="mengenai" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-brand-orange font-bold tracking-wide uppercase text-sm mb-2">Kenali Kami</h2>
+                <h3 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">Mengenai UPAYA</h3>
+                <p class="text-lg text-slate-600 leading-relaxed">
+                    Koperasi Orang Kurang Upaya Kinta Berhad adalah sebuah pertubuhan manusia yang berautonomi di mana anggotanya bersatu secara sukarela demi mencapai kepentingan dan aspirasi bersama.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Card 1: Pengenalan -->
+                <div class="bg-slate-50 rounded-3xl p-8 shadow-soft border border-slate-100 hover:shadow-lg transition-shadow duration-300 relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 w-24 h-24 bg-blue-100 rounded-bl-full -mr-4 -mt-4 opacity-50 group-hover:scale-110 transition-transform"></div>
+                    <div class="w-14 h-14 bg-white rounded-2xl shadow-sm flex items-center justify-center text-brand-blue text-2xl mb-6 relative z-10">
+                        <i class="fas fa-info-circle"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-slate-900 mb-4">Latar Belakang</h4>
+                    <p class="text-slate-600 leading-relaxed text-sm">
+                        Didorong oleh semangat bersatu di bidang ekonomi, sosial dan budaya melalui suatu badan yang dimiliki bersama dan terkawal secara demokrasi. Didaftarkan pada <strong class="text-brand-blue">25 November 2009</strong> (No. Pend: A-4-0697).
+                    </p>
+                </div>
+
+                <!-- Card 2: Objektif -->
+                <div class="bg-slate-50 rounded-3xl p-8 shadow-soft border border-slate-100 hover:shadow-lg transition-shadow duration-300 relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 w-24 h-24 bg-orange-100 rounded-bl-full -mr-4 -mt-4 opacity-50 group-hover:scale-110 transition-transform"></div>
+                    <div class="w-14 h-14 bg-white rounded-2xl shadow-sm flex items-center justify-center text-brand-orange text-2xl mb-6 relative z-10">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-slate-900 mb-4">Objektif Penubuhan</h4>
+                    <p class="text-slate-600 leading-relaxed text-sm">
+                        Meningkatkan taraf sosial ekonomi dan kebajikan ahli. Menyediakan kemudahan menyimpan bagi menggalakkan ahli menabung. Kadar dividen menarik ditawarkan bergantung kepada prestasi perniagaan.
+                    </p>
+                </div>
+
+                <!-- Card 3: Kedai -->
+                <div class="bg-slate-50 rounded-3xl p-8 shadow-soft border border-slate-100 hover:shadow-lg transition-shadow duration-300 relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 w-24 h-24 bg-green-100 rounded-bl-full -mr-4 -mt-4 opacity-50 group-hover:scale-110 transition-transform"></div>
+                    <div class="w-14 h-14 bg-white rounded-2xl shadow-sm flex items-center justify-center text-emerald-500 text-2xl mb-6 relative z-10">
+                        <i class="fas fa-store"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-slate-900 mb-4">Kedai Kraf Anyaman</h4>
+                    <p class="text-slate-600 leading-relaxed text-sm mb-4">
+                        Koperasi telah menyewa dua buah bangunan kedai untuk dijadikan kedai Kraf Anyaman yang kini sedang giat beroperasi di lokasi berikut:
+                    </p>
+                    <ul class="space-y-2 text-sm text-slate-600 font-medium">
+                        <li class="flex items-start gap-2"><i class="fas fa-map-pin text-emerald-500 mt-1"></i> 190 Jalan Sultan Idris Shah, Ipoh</li>
+                        <li class="flex items-start gap-2"><i class="fas fa-map-pin text-emerald-500 mt-1"></i> 17 Jalan Ampang Baru 6A, Ampang</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Sijil Pendaftaran Section -->
+            <div class="mt-16 bg-white rounded-[2.5rem] p-8 md:p-12 shadow-soft border border-slate-100 flex flex-col md:flex-row items-center gap-10 hover:shadow-xl transition-shadow duration-300 relative overflow-hidden">
+                <!-- Decorative element -->
+                <div class="absolute top-0 right-0 w-64 h-64 bg-brand-blue opacity-5 rounded-full -mr-20 -mt-20 pointer-events-none"></div>
+                
+                <div class="w-full md:w-1/2 text-center md:text-left relative z-10">
+                    <div class="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center text-brand-blue text-3xl mx-auto md:mx-0 mb-6 shadow-sm border border-blue-100">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <h4 class="text-2xl md:text-3xl font-bold text-slate-900 mb-4">Perakuan Pendaftaran Rasmi</h4>
+                    <p class="text-slate-600 leading-relaxed mb-8">
+                        Koperasi Orang Kurang Upaya Kinta Berhad (UPAYA) telah diperakui dan didaftarkan secara sah di bawah <strong>Suruhanjaya Koperasi Malaysia (SKM)</strong>. Dokumen ini membuktikan komitmen dan ketelusan kami dalam mentadbir urus entiti dan menjaga amanah semua anggota.
+                    </p>
+                    <div class="inline-flex items-center gap-3 text-sm font-bold text-slate-800 bg-slate-100 px-5 py-3 rounded-xl border border-slate-200">
+                        <i class="fas fa-hashtag text-brand-orange"></i> No. Pendaftaran: A-4-0697
+                    </div>
+                </div>
+                
+                <div class="w-full md:w-1/2 flex justify-center relative z-10 group mt-8 md:mt-0">
+                    <!-- Background Shadow for Image -->
+                    <div class="absolute inset-0 bg-gradient-to-br from-brand-blue to-brand-orange rounded-2xl transform rotate-3 scale-105 opacity-10 group-hover:rotate-6 transition-transform duration-500"></div>
+                    <!-- Image -->
+                    <img src="SALINAN-SIJIL-KOPERASI.jpg" alt="Salinan Sijil Perakuan Pendaftaran Koperasi" onclick="openLightbox(this.src)" class="relative z-10 w-full max-w-md h-auto object-cover rounded-2xl shadow-2xl border-4 border-white transform group-hover:-translate-y-2 transition-transform duration-500 cursor-pointer" title="Klik untuk besarkan">
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Galeri Gambar Section -->
+    <section id="galeri" class="py-20 bg-slate-50 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <p class="text-slate-500 font-medium text-sm mb-2"><i class="far fa-clock mr-1"></i> Dikemaskini pada Oktober 2026</p>
+                <h3 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">Galeri UPAYA</h3>
+                <p class="text-lg text-slate-600 leading-relaxed">
+                    Koleksi gambar sekitar program, aktiviti, dan fasiliti di bawah kelolaan Koperasi Orang Kurang Upaya Kinta Berhad. Klik pada gambar untuk paparan penuh.
+                </p>
+            </div>
+
+            <!-- Tabs Navigation -->
+            <div class="flex flex-wrap justify-center gap-3 mb-12">
+                <button onclick="openGalleryTab('tab1', this)" class="gallery-tab-btn bg-brand-blue text-white shadow-md px-6 py-3 rounded-full font-medium text-sm transition-all duration-300 transform hover:-translate-y-1">
+                    Mesyuarat Agung Tahunan Ke-12
+                </button>
+                <button onclick="openGalleryTab('tab2', this)" class="gallery-tab-btn bg-white text-slate-600 border border-slate-200 hover:bg-slate-100 px-6 py-3 rounded-full font-medium text-sm transition-all duration-300 transform hover:-translate-y-1">
+                    Kedai Kraf Anyaman UPAYA di pekan IPOH
+                </button>
+                <button onclick="openGalleryTab('tab3', this)" class="gallery-tab-btn bg-white text-slate-600 border border-slate-200 hover:bg-slate-100 px-6 py-3 rounded-full font-medium text-sm transition-all duration-300 transform hover:-translate-y-1">
+                    Galeri Gambar di Pejabat Pameran UPAYA
+                </button>
+            </div>
+
+            <!-- Tab Content 1: Mesyuarat Agung -->
+            <div id="tab1" class="gallery-tab-content animate-[fadeIn_0.5s_ease-in-out]">
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                    <img src="IMG_7736-1024x768.jpg" alt="Mesyuarat Agung 1" onclick="openLightbox(this.src)" class="cursor-pointer w-full h-64 object-cover rounded-2xl shadow-sm hover:shadow-xl hover:scale-[1.02] transition-all duration-300 border-2 border-white">
+                    <img src="IMG_7745-1024x768.jpg" alt="Mesyuarat Agung 2" onclick="openLightbox(this.src)" class="cursor-pointer w-full h-64 object-cover rounded-2xl shadow-sm hover:shadow-xl hover:scale-[1.02] transition-all duration-300 border-2 border-white">
+                    <img src="IMG_7757-768x1024.jpg" alt="Mesyuarat Agung 3" onclick="openLightbox(this.src)" class="cursor-pointer w-full h-64 object-cover rounded-2xl shadow-sm hover:shadow-xl hover:scale-[1.02] transition-all duration-300 border-2 border-white">
+                    <img src="IMG_7769-1024x576.jpg" alt="Mesyuarat Agung 4" onclick="openLightbox(this.src)" class="cursor-pointer w-full h-64 object-cover rounded-2xl shadow-sm hover:shadow-xl hover:scale-[1.02] transition-all duration-300 border-2 border-white">
+                    <img src="IMG_7771-1024x576.jpg" alt="Mesyuarat Agung 5" onclick="openLightbox(this.src)" class="cursor-pointer w-full h-64 object-cover rounded-2xl shadow-sm hover:shadow-xl hover:scale-[1.02] transition-all duration-300 border-2 border-white">
+                    <img src="IMG_7747.jpg" alt="Mesyuarat Agung 6" onclick="openLightbox(this.src)" class="cursor-pointer w-full h-64 object-cover rounded-2xl shadow-sm hover:shadow-xl hover:scale-[1.02] transition-all duration-300 border-2 border-white">
+                    <img src="IMG_7761.jpg" alt="Mesyuarat Agung 7" onclick="openLightbox(this.src)" class="cursor-pointer w-full h-64 object-cover rounded-2xl shadow-sm hover:shadow-xl hover:scale-[1.02] transition-all duration-300 border-2 border-white">
+                    <img src="IMG_7750.jpg" alt="Mesyuarat Agung 8" onclick="openLightbox(this.src)" class="cursor-pointer w-full h-64 object-cover rounded-2xl shadow-sm hover:shadow-xl hover:scale-[1.02] transition-all duration-300 border-2 border-white">
+                    <img src="IMG_7774.jpg" alt="Mesyuarat Agung 9" onclick="openLightbox(this.src)" class="cursor-pointer w-full h-64 object-cover rounded-2xl shadow-sm hover:shadow-xl hover:scale-[1.02] transition-all duration-300 border-2 border-white lg:col-span-2">
+                    <img src="IMG_7779.jpg" alt="Mesyuarat Agung 10" onclick="openLightbox(this.src)" class="cursor-pointer w-full h-64 object-cover rounded-2xl shadow-sm hover:shadow-xl hover:scale-[1.02] transition-all duration-300 border-2 border-white lg:col-span-2">
+                </div>
+            </div>
+
+            <!-- Tab Content 2: Kedai Kraf -->
+            <div id="tab2" class="gallery-tab-content hidden animate-[fadeIn_0.5s_ease-in-out]">
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                    <img src="DSC_0017-1024x685.jpg" alt="Kedai Kraf Anyaman 1" onclick="openLightbox(this.src)" class="cursor-pointer w-full h-64 object-cover rounded-2xl shadow-sm hover:shadow-xl hover:scale-[1.02] transition-all duration-300 border-2 border-white lg:col-span-2">
+                    <img src="IMG_6910-768x1024.jpg" alt="Kedai Kraf Anyaman 2" onclick="openLightbox(this.src)" class="cursor-pointer w-full h-64 object-cover rounded-2xl shadow-sm hover:shadow-xl hover:scale-[1.02] transition-all duration-300 border-2 border-white">
+                    <img src="IMG_6915-768x1024.jpg" alt="Kedai Kraf Anyaman 3" onclick="openLightbox(this.src)" class="cursor-pointer w-full h-64 object-cover rounded-2xl shadow-sm hover:shadow-xl hover:scale-[1.02] transition-all duration-300 border-2 border-white">
+                    <img src="IMG_6916-768x1024.jpg" alt="Kedai Kraf Anyaman 4" onclick="openLightbox(this.src)" class="cursor-pointer w-full h-64 object-cover rounded-2xl shadow-sm hover:shadow-xl hover:scale-[1.02] transition-all duration-300 border-2 border-white">
+                    <img src="IMG_6926-768x1024.jpg" alt="Kedai Kraf Anyaman 5" onclick="openLightbox(this.src)" class="cursor-pointer w-full h-64 object-cover rounded-2xl shadow-sm hover:shadow-xl hover:scale-[1.02] transition-all duration-300 border-2 border-white">
+                    <img src="IMG_6930-768x1024.jpg" alt="Kedai Kraf Anyaman 6" onclick="openLightbox(this.src)" class="cursor-pointer w-full h-64 object-cover rounded-2xl shadow-sm hover:shadow-xl hover:scale-[1.02] transition-all duration-300 border-2 border-white">
+                    <img src="IMG_6931-768x1024.jpg" alt="Kedai Kraf Anyaman 7" onclick="openLightbox(this.src)" class="cursor-pointer w-full h-64 object-cover rounded-2xl shadow-sm hover:shadow-xl hover:scale-[1.02] transition-all duration-300 border-2 border-white lg:col-span-2">
+                    <img src="IMG_6933-768x1024.jpg" alt="Kedai Kraf Anyaman 8" onclick="openLightbox(this.src)" class="cursor-pointer w-full h-64 object-cover rounded-2xl shadow-sm hover:shadow-xl hover:scale-[1.02] transition-all duration-300 border-2 border-white">
+                    <img src="IMG_6939-768x1024.jpg" alt="Kedai Kraf Anyaman 9" onclick="openLightbox(this.src)" class="cursor-pointer w-full h-64 object-cover rounded-2xl shadow-sm hover:shadow-xl hover:scale-[1.02] transition-all duration-300 border-2 border-white">
+                    <img src="IMG_6940-768x1024.jpg" alt="Kedai Kraf Anyaman 10" onclick="openLightbox(this.src)" class="cursor-pointer w-full h-64 object-cover rounded-2xl shadow-sm hover:shadow-xl hover:scale-[1.02] transition-all duration-300 border-2 border-white lg:col-span-2">
+                </div>
+            </div>
+
+            <!-- Tab Content 3: Pusat Khidmat -->
+            <div id="tab3" class="gallery-tab-content hidden animate-[fadeIn_0.5s_ease-in-out]">
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                    <img src="IMG_6816-1024x768.jpg" alt="Pejabat Pameran 1" onclick="openLightbox(this.src)" class="cursor-pointer w-full h-64 object-cover rounded-2xl shadow-sm hover:shadow-xl hover:scale-[1.02] transition-all duration-300 border-2 border-white">
+                    <img src="IMG_6772-768x1024.jpg" alt="Pejabat Pameran 2" onclick="openLightbox(this.src)" class="cursor-pointer w-full h-64 object-cover rounded-2xl shadow-sm hover:shadow-xl hover:scale-[1.02] transition-all duration-300 border-2 border-white">
+                    <img src="IMG_6773-768x1024.jpg" alt="Pejabat Pameran 3" onclick="openLightbox(this.src)" class="cursor-pointer w-full h-64 object-cover rounded-2xl shadow-sm hover:shadow-xl hover:scale-[1.02] transition-all duration-300 border-2 border-white">
+                    <img src="IMG_6774-768x1024.jpg" alt="Pejabat Pameran 4" onclick="openLightbox(this.src)" class="cursor-pointer w-full h-64 object-cover rounded-2xl shadow-sm hover:shadow-xl hover:scale-[1.02] transition-all duration-300 border-2 border-white">
+                    <img src="IMG_6782-768x1024.jpg" alt="Pejabat Pameran 5" onclick="openLightbox(this.src)" class="cursor-pointer w-full h-64 object-cover rounded-2xl shadow-sm hover:shadow-xl hover:scale-[1.02] transition-all duration-300 border-2 border-white">
+                    <img src="IMG_6900-1024x768.jpg" alt="Pejabat Pameran 6" onclick="openLightbox(this.src)" class="cursor-pointer w-full h-64 object-cover rounded-2xl shadow-sm hover:shadow-xl hover:scale-[1.02] transition-all duration-300 border-2 border-white lg:col-span-2">
+                    <img src="IMG_6762-1024x768.jpg" alt="Pejabat Pameran 7" onclick="openLightbox(this.src)" class="cursor-pointer w-full h-64 object-cover rounded-2xl shadow-sm hover:shadow-xl hover:scale-[1.02] transition-all duration-300 border-2 border-white lg:col-span-2">
+                    <img src="IMG_6807-1024x768.jpg" alt="Pejabat Pameran 8" onclick="openLightbox(this.src)" class="cursor-pointer w-full h-64 object-cover rounded-2xl shadow-sm hover:shadow-xl hover:scale-[1.02] transition-all duration-300 border-2 border-white lg:col-span-2">
+                    <img src="IMG_6809-1024x768.jpg" alt="Pejabat Pameran 9" onclick="openLightbox(this.src)" class="cursor-pointer w-full h-64 object-cover rounded-2xl shadow-sm hover:shadow-xl hover:scale-[1.02] transition-all duration-300 border-2 border-white lg:col-span-2">
+                    <img src="DSC_0059-1024x685_2.jpg" alt="Pejabat Pameran 10" onclick="openLightbox(this.src)" class="cursor-pointer w-full h-64 object-cover rounded-2xl shadow-sm hover:shadow-xl hover:scale-[1.02] transition-all duration-300 border-2 border-white lg:col-span-2">
+                    <img src="IMG_6828-1024x768.jpg" alt="Pejabat Pameran 11" onclick="openLightbox(this.src)" class="cursor-pointer w-full h-64 object-cover rounded-2xl shadow-sm hover:shadow-xl hover:scale-[1.02] transition-all duration-300 border-2 border-white">
+                    <img src="IMG_6836-1024x768.jpg" alt="Pejabat Pameran 12" onclick="openLightbox(this.src)" class="cursor-pointer w-full h-64 object-cover rounded-2xl shadow-sm hover:shadow-xl hover:scale-[1.02] transition-all duration-300 border-2 border-white">
+                    <img src="DSC_0049-1024x685.jpg" alt="Pejabat Pameran 13" onclick="openLightbox(this.src)" class="cursor-pointer w-full h-64 object-cover rounded-2xl shadow-sm hover:shadow-xl hover:scale-[1.02] transition-all duration-300 border-2 border-white lg:col-span-2">
+                    <img src="DSC_0051-1024x685.jpg" alt="Pejabat Pameran 14" onclick="openLightbox(this.src)" class="cursor-pointer w-full h-64 object-cover rounded-2xl shadow-sm hover:shadow-xl hover:scale-[1.02] transition-all duration-300 border-2 border-white lg:col-span-2">
+                    <img src="DSC_0059-1024x685.jpg" alt="Pejabat Pameran 15" onclick="openLightbox(this.src)" class="cursor-pointer w-full h-64 object-cover rounded-2xl shadow-sm hover:shadow-xl hover:scale-[1.02] transition-all duration-300 border-2 border-white lg:col-span-2">
+                    <img src="DSC_0067-1024x685.jpg" alt="Pejabat Pameran 16" onclick="openLightbox(this.src)" class="cursor-pointer w-full h-64 object-cover rounded-2xl shadow-sm hover:shadow-xl hover:scale-[1.02] transition-all duration-300 border-2 border-white lg:col-span-2">
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- Galeri Video Section (Dark Mode) -->
+    <section id="video" class="py-20 bg-slate-900 relative overflow-hidden">
+        <!-- Decorative bg -->
+        <div class="absolute top-0 right-0 w-96 h-96 bg-brand-blue opacity-10 rounded-full blur-3xl -mr-20 -mt-20 pointer-events-none"></div>
+        <div class="absolute bottom-0 left-0 w-80 h-80 bg-brand-orange opacity-10 rounded-full blur-3xl -ml-20 -mb-20 pointer-events-none"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-brand-orange font-bold tracking-wide uppercase text-sm mb-2">Aktiviti & Maklumat</h2>
+                <h3 class="text-3xl md:text-4xl font-bold text-white mb-6">Galeri Video UPAYA</h3>
+                <p class="text-lg text-slate-400 leading-relaxed">
+                    Tonton sorotan aktiviti dan kenali dengan lebih rapat mengenai Koperasi Orang Kurang Upaya Kinta Berhad melalui himpunan video kami.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Video 1 -->
+                <div class="bg-slate-800 rounded-3xl p-3 shadow-xl border border-slate-700 hover:border-brand-blue hover:shadow-brand-blue/20 transition-all duration-300 group">
+                    <div class="overflow-hidden rounded-2xl w-full aspect-video">
+                        <iframe class="w-full h-full" src="https://www.youtube-nocookie.com/embed/v9ePyIbvfrg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <!-- Video 2 -->
+                <div class="bg-slate-800 rounded-3xl p-3 shadow-xl border border-slate-700 hover:border-brand-blue hover:shadow-brand-blue/20 transition-all duration-300 group">
+                    <div class="overflow-hidden rounded-2xl w-full aspect-video">
+                        <iframe class="w-full h-full" src="https://www.youtube-nocookie.com/embed/a1i_LGM-ySk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <!-- Video 3 -->
+                <div class="bg-slate-800 rounded-3xl p-3 shadow-xl border border-slate-700 hover:border-brand-blue hover:shadow-brand-blue/20 transition-all duration-300 group">
+                    <div class="overflow-hidden rounded-2xl w-full aspect-video">
+                        <iframe class="w-full h-full" src="https://www.youtube-nocookie.com/embed/6mKKeL3aIcI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Butang ke Saluran YouTube -->
+            <div class="mt-14 text-center">
+                <a href="https://www.youtube.com/@upaya23" target="_blank" class="inline-flex items-center gap-3 px-8 py-4 bg-[#FF0000] hover:bg-red-700 text-white font-semibold rounded-full shadow-lg shadow-red-500/30 transition-all duration-300 transform hover:-translate-y-1">
+                    <i class="fab fa-youtube text-2xl"></i> Lihat Saluran YouTube Rasmi
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hubungi Kami Section -->
+    <section id="hubungi" class="py-20 bg-slate-50 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white rounded-[2.5rem] shadow-xl overflow-hidden">
+                <div class="flex flex-col lg:flex-row">
+                    
+                    <!-- Contact Form (Left) -->
+                    <div class="w-full lg:w-3/5 p-8 lg:p-12 xl:p-16">
+                        <h2 class="text-3xl font-bold text-slate-900 mb-2">Hubungi Kami</h2>
+                        <p class="text-slate-500 mb-8">Hantarkan pertanyaan atau mesej anda kepada pihak pengurusan.</p>
+                        
+                        <form class="space-y-5" onsubmit="event.preventDefault();">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                                <div>
+                                    <label class="block text-sm font-semibold text-slate-700 mb-2">Nama Penuh</label>
+                                    <input type="text" placeholder="Cth: Ahmad bin Ali" class="w-full px-5 py-3 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-brand-blue/50 focus:border-brand-blue transition-colors">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-semibold text-slate-700 mb-2">No Telefon</label>
+                                    <input type="tel" placeholder="Cth: 01X-XXXXXXX" class="w-full px-5 py-3 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-brand-blue/50 focus:border-brand-blue transition-colors">
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-semibold text-slate-700 mb-2">Alamat Emel</label>
+                                <input type="email" placeholder="emel@domain.com" class="w-full px-5 py-3 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-brand-blue/50 focus:border-brand-blue transition-colors">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-semibold text-slate-700 mb-2">Pertanyaan / Mesej</label>
+                                <textarea rows="4" placeholder="Tuliskan mesej anda di sini..." class="w-full px-5 py-3 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-brand-blue/50 focus:border-brand-blue transition-colors resize-none"></textarea>
+                            </div>
+                            <button type="submit" class="w-full md:w-auto px-8 py-4 bg-brand-blue hover:bg-blue-700 text-white font-semibold rounded-xl shadow-lg shadow-blue-500/30 transition-all transform hover:-translate-y-0.5">
+                                Hantar Mesej
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Contact Information (Right) -->
+                    <div class="w-full lg:w-2/5 bg-brand-dark p-8 lg:p-12 xl:p-16 text-white relative overflow-hidden flex flex-col justify-between">
+                        <!-- Decorative bg circles -->
+                        <div class="absolute top-0 right-0 w-64 h-64 bg-white opacity-5 rounded-full -mr-20 -mt-20"></div>
+                        <div class="absolute bottom-0 left-0 w-48 h-48 bg-brand-blue opacity-20 rounded-full -ml-10 -mb-10 pointer-events-none"></div>
+
+                        <div class="relative z-10">
+                            <h3 class="text-2xl font-bold mb-8">Maklumat Pejabat</h3>
+                            
+                            <div class="space-y-6">
+                                <!-- Phone -->
+                                <div class="flex items-start gap-4">
+                                    <div class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0">
+                                        <i class="fas fa-phone-alt"></i>
+                                    </div>
+                                    <div>
+                                        <p class="text-sm text-blue-200 font-medium">Telefon Pejabat</p>
+                                        <p class="text-lg font-semibold">05-3115509</p>
+                                    </div>
+                                </div>
+                                
+                                <!-- Email -->
+                                <div class="flex items-start gap-4">
+                                    <div class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0">
+                                        <i class="fas fa-envelope"></i>
+                                    </div>
+                                    <div>
+                                        <p class="text-sm text-blue-200 font-medium">Emel Rasmi</p>
+                                        <p class="text-lg font-semibold">ppocperak@yahoo.com</p>
+                                    </div>
+                                </div>
+
+                                <!-- HQ Address -->
+                                <div class="flex items-start gap-4">
+                                    <div class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                    </div>
+                                    <div>
+                                        <p class="text-sm text-blue-200 font-medium">Pejabat & Bilik Pameran</p>
+                                        <p class="text-base leading-relaxed">17, Jalan Ampang Baru 6A,<br>31350 Ipoh, Perak</p>
+                                        <p class="text-sm text-blue-200 mt-1"><i class="far fa-clock mr-1"></i> Isnin - Jumaat (9pg - 5ptg)</p>
+                                    </div>
+                                </div>
+
+                                <!-- Branch Address -->
+                                <div class="flex items-start gap-4">
+                                    <div class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0">
+                                        <i class="fas fa-store"></i>
+                                    </div>
+                                    <div>
+                                        <p class="text-sm text-blue-200 font-medium">Kedai Kraf Anyaman</p>
+                                        <p class="text-base leading-relaxed">190, Jalan Sultan Idris Shah,<br>30000 Ipoh, Perak</p>
+                                        <p class="text-sm text-blue-200 mt-1"><i class="far fa-clock mr-1"></i> Ahad - Sabtu (9pg - 6ptg)<br>Jumaat Tutup</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="relative z-10 mt-12 pt-8 border-t border-white/10">
+                            <a href="https://wa.me/60135295509" target="_blank" class="w-full px-6 py-4 bg-[#25D366] hover:bg-[#20b958] text-white font-semibold rounded-xl shadow-lg transition-all transform hover:-translate-y-1 flex items-center justify-center gap-3">
+                                <i class="fab fa-whatsapp text-2xl"></i> Hubungi Kami di WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Peta Lokasi Kami -->
+            <div class="mt-20">
+                <div class="text-center mb-10">
+                    <h3 class="text-2xl md:text-3xl font-bold text-slate-900 mb-4">Peta Lokasi Premis Kami</h3>
+                    <p class="text-slate-600">Jejaki lokasi pejabat operasi dan kedai kraf kami dengan mudah menggunakan peta interaktif di bawah.</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Peta 1: HQ -->
+                    <div class="bg-white p-4 rounded-3xl shadow-lg border border-slate-100 transition-all hover:shadow-xl">
+                        <div class="flex items-center gap-3 mb-4 px-2">
+                            <i class="fas fa-map-marker-alt text-brand-orange text-xl"></i>
+                            <h4 class="font-bold text-slate-800">Pejabat & Bilik Pameran</h4>
+                        </div>
+                        <div class="w-full h-72 rounded-2xl overflow-hidden bg-slate-100">
+                            <iframe src="https://maps.google.com/maps?q=17,+Jalan+Ampang+Baru+6A,+31350+Ipoh,+Perak&t=&z=15&ie=UTF8&iwloc=&output=embed" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                    </div>
+
+                    <!-- Peta 2: Kedai Kraf -->
+                    <div class="bg-white p-4 rounded-3xl shadow-lg border border-slate-100 transition-all hover:shadow-xl">
+                        <div class="flex items-center gap-3 mb-4 px-2">
+                            <i class="fas fa-store text-emerald-500 text-xl"></i>
+                            <h4 class="font-bold text-slate-800">Kedai Kraf Anyaman</h4>
+                        </div>
+                        <div class="w-full h-72 rounded-2xl overflow-hidden bg-slate-100">
+                            <iframe src="https://maps.google.com/maps?q=190,+Jalan+Sultan+Idris+Shah,+30000+Ipoh,+Perak&t=&z=16&ie=UTF8&iwloc=&output=embed" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-10 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-4">
+            <div class="flex items-center gap-2">
+                <span class="font-bold text-white tracking-wider">UPAYA</span>
+                <span class="text-slate-600">|</span>
+                <p class="text-sm">&copy; 2026 Koperasi Orang Kurang Upaya Kinta Berhad.</p>
+            </div>
+            <div class="flex gap-4 text-lg">
+                <a href="https://www.facebook.com/profile.php?id=61551461905698" target="_blank" class="hover:text-white transition-colors"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.youtube.com/@upaya23" target="_blank" class="hover:text-white transition-colors"><i class="fab fa-youtube"></i></a>
+                <a href="https://www.instagram.com/upaya.ipoh/" target="_blank" class="hover:text-white transition-colors"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="fixed inset-0 z-[100] bg-slate-900/95 hidden flex-col items-center justify-center backdrop-blur-sm transition-opacity duration-300 opacity-0" onclick="closeLightbox()">
+        <button class="absolute top-6 right-6 lg:top-10 lg:right-10 text-slate-300 hover:text-white text-5xl transition-colors cursor-pointer focus:outline-none">&times;</button>
+        <img id="lightbox-img" src="" alt="Paparan Besar" class="max-w-[95%] max-h-[90vh] object-contain rounded-lg shadow-2xl transform scale-95 transition-transform duration-300" onclick="event.stopPropagation();">
+    </div>
+
+    <!-- Script for Gallery Tabs -->
+    <script>
+        function openGalleryTab(tabId, btnElement) {
+            // Hide all contents
+            document.querySelectorAll('.gallery-tab-content').forEach(el => {
+                el.classList.add('hidden');
+            });
+            // Show target content
+            document.getElementById(tabId).classList.remove('hidden');
+            
+            // Reset all buttons
+            document.querySelectorAll('.gallery-tab-btn').forEach(el => {
+                el.classList.remove('bg-brand-blue', 'text-white', 'shadow-md');
+                el.classList.add('bg-white', 'text-slate-600', 'border', 'border-slate-200', 'hover:bg-slate-100');
+            });
+            
+            // Highlight active button
+            btnElement.classList.remove('bg-white', 'text-slate-600', 'border', 'border-slate-200', 'hover:bg-slate-100');
+            btnElement.classList.add('bg-brand-blue', 'text-white', 'shadow-md');
+        }
+
+        // Lightbox Functions
+        function openLightbox(imgSrc) {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            
+            // Set image source
+            lightboxImg.src = imgSrc;
+            
+            // Show modal container
+            lightbox.classList.remove('hidden');
+            
+            // Trigger fade-in and zoom animation after a tiny delay
+            setTimeout(() => {
+                lightbox.classList.remove('opacity-0');
+                lightboxImg.classList.remove('scale-95');
+                lightboxImg.classList.add('scale-100');
+            }, 20);
+            
+            // Prevent scrolling on body when lightbox is open
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            
+            // Trigger fade-out and zoom-out animation
+            lightbox.classList.add('opacity-0');
+            lightboxImg.classList.remove('scale-100');
+            lightboxImg.classList.add('scale-95');
+            
+            // Hide modal container after animation finishes
+            setTimeout(() => {
+                lightbox.classList.add('hidden');
+            }, 300);
+            
+            // Restore scrolling on body
+            document.body.style.overflow = 'auto';
+        }
+        
+        // Close lightbox when hitting Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === "Escape") {
+                const lightbox = document.getElementById('lightbox');
+                if (!lightbox.classList.contains('hidden')) {
+                    closeLightbox();
+                }
+            }
+        });
+    </script>
+</body>
+</html>
